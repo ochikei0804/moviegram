@@ -1,0 +1,60 @@
+<section class="hero is-success">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        ムービー一覧
+      </h1>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-multiline">
+      <% @movies.each do |movie| %>
+      <div class="column is-4">
+          <div class="card">
+            <div class="card-image">
+              <figure class="image is-4by3">
+                <%= link_to movie_path(movie) do  %>
+                  <%= attachment_image_tag movie, :image %>
+                <% end %>
+              </figure>
+              <div class="card-content">
+                <p class="title is-4"><%= link_to movie.title, movie_path(movie) %></p>
+              </div>
+            </div>
+            <div class="card-content">
+              <div class="media">
+                <div class="media-left">
+                  <figure class="image is-48x48">
+                    <%= link_to user_path(movie.user.id) do %>
+                      <%= attachment_image_tag movie.user, :profile_image, fallback: "no-image.png", class: "profile_image" %>
+                    <% end %>
+                  </figure>
+                </div>
+                <div class="media-content">
+                  <div class="title"><%= link_to movie.user.username, user_path(movie.user) %></div>
+                  <% if current_user.already_favorited?(movie) %>
+                    <%= link_to movie_favorites_path(movie), method: :delete do %>
+                      <i class="fas fa-heart"></i>
+                    <% end %>
+                  <% else %>
+                    <%= link_to movie_favorites_path(movie), method: :post do %>
+                      <i class="far fa-heart"></i>
+                    <% end %>
+                  <% end %>
+                <%= movie.favorites.count %>
+                </div>
+              </div>
+              
+              <div class="content">
+                <time><%= movie.updated_at.strftime('%Y/%m/%d %H:%M') %></time>更新
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</section>

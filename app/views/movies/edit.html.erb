@@ -1,0 +1,43 @@
+<section class="hero is-success">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        ムービーレコメンド編集
+      </h1>
+    </div>
+  </div>
+</section>
+
+<% if @movie.errors.any? %>
+  <div class="notification is-danger">
+    <h2><%= pluralize(@movie.errors.count, "error") %> prohibited this object from being saved: not successfully</h2>
+    <ul>
+      <% @movie.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-6">
+        <%= form_for @movie do |f| %>
+        <div class="field">
+          <%= f.label :title, "ムービータイトル", class: "label" %>
+          <%= f.text_field :title, class: "input" %>
+        </div>
+        
+        <div class="field">
+          <%= f.label :body, "レコメンド内容", class: "label" %>
+          <%= f.text_area :body, class: "textarea" %>
+        </div>
+        
+        <div class="field">
+          <%= f.label :image, "サムネイル", class: "label" %>
+          <%= f.attachment_field :image, class: "input" %>
+        </div>
+          
+          <%= f.submit '更新', class: "button is-success" %>
+        <% end %>
