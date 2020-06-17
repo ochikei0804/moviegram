@@ -7,4 +7,5 @@ class Movie < ApplicationRecord
     validates :body
     validates :image
   end
+  has_many :comments
 end

@@ -81,21 +81,21 @@
                   <div class="media-content">
                     <%= link_to movie_path(movie), class: "panel-block" do %>
                     <span class="panel-icon">
-                        <i class="fas fa-book" aria-hidden="true"></i>
-                      </span>
+                      <i class="fas fa-book" aria-hidden="true"></i>
+                    </span>
                       このムービーレコメンドを見る
                     <% end %>
                     <% if @user.id == current_user.id %>
                       <%= link_to edit_movie_path(movie), class: "panel-block" do %>
                         <span class="panel-icon">
-                            <i class="fas fa-edit"></i>
-                          </span>
+                          <i class="fas fa-edit"></i>
+                        </span>
                           このムービーレコメンドを編集する
                       <% end %>
                       <%= link_to movie_path(movie), method: :delete, data: {confirm: "本当に削除しますか？"}, class: "panel-block" do %>
                         <span class="panel-icon">
-                            <i class="fas fa-trash"></i>
-                          </span>
+                          <i class="fas fa-trash"></i>
+                        </span>
                           このムービーレコメンドを削除する
                       <% end %>
                     <% end %>

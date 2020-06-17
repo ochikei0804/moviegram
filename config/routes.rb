@@ -6,4 +6,7 @@ Rails.application.routes.draw do
     resource :favorites, only: [:create, :destroy]
   end
   resources :relationships, only: [:create, :destroy]
+  resources :movies do
+    resources :comments, only: [:create]
+  end
 end
