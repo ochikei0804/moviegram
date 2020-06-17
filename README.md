@@ -1,24 +1,27 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
 * Ruby version
+ruby 2.5.3p105 (2018-10-18 revision 65156) [x86_64-linux]
+Rails 5.2.4.3
 
-* System dependencies
+■test用ユーザについて（是非ログインしてお試しください）
+ユーザ名：test
+パスワード：testtest
 
-* Configuration
+■アプリケーションの概要
+自分の映画をおすすめできるサイト
 
-* Database creation
+■アプリケーションの機能一覧
+ユーザ新規登録機能
+ユーザログイン機能
+記事一覧表示機能
+記事詳細表示機能
+記事投稿機能
+ユーザフォロー機能
+ユーザ投稿いいね機能
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+■アプリケーション内で使用している技術一覧
+インフラ：
+AWS
+データベース：
+MySQL
