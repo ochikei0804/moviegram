@@ -35,16 +35,19 @@
                 </div>
                 <div class="media-content">
                   <div class="title"><%= link_to movie.user.username, user_path(movie.user) %></div>
-                  <% if current_user.already_favorited?(movie) %>
-                    <%= link_to movie_favorites_path(movie), method: :delete do %>
-                      <i class="fas fa-heart"></i>
-                    <% end %>
+                    <% if user_signed_in? %>  
+                      <% if current_user.already_favorited?(movie) %>
+                        <%= link_to movie_favorites_path(movie), method: :delete do %>
+                          <i class="fas fa-heart"></i>
+                        <% end %>
+                      <% else %>
+                        <%= link_to movie_favorites_path(movie), method: :post do %>
+                          <i class="far fa-heart"></i>
+                        <% end %>
+                      <% end %>
+                    <%= movie.favorites.count %>
                   <% else %>
-                    <%= link_to movie_favorites_path(movie), method: :post do %>
-                      <i class="far fa-heart"></i>
-                    <% end %>
                   <% end %>
-                <%= movie.favorites.count %>
                 </div>
               </div>
               
