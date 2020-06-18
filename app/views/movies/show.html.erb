@@ -93,6 +93,7 @@
 <% if user_signed_in? %>
   <%= form_with(model: [@movie, @comment], local: true) do |f| %>
     <%= f.text_area :content, class: "textarea", rows: 5 %>
+    <br />
     <%= button_tag type: "submit", class: "button is-success float-right mt-3" do %>
       <i class="far fa-comments"></i> コメントする
     <% end %>
