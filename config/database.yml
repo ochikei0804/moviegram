@@ -23,3 +23,12 @@ test:
 production:
   <<: *default
   database: db/production.sqlite3
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+  database: moviegram_production
+  username: moviegram
+  password: <%= ENV['MOVIEGRAM_DATABASE_PASSWORD'] %>
+  
