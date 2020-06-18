@@ -50,7 +50,7 @@
               <%= link_to "ムービーグラマー一覧", users_path, class: " button is-warning is-light" %>
             </p>
             <p class="control">
-              <%= link_to "マイページ", user_path(current_user), class: " button is-warning is-light" %>
+              <%= link_to current_user.username, user_path(current_user), class: " button is-warning is-light" %>
             </p>
             <p class="control">
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "button is-warning is-light" %>
@@ -60,12 +60,12 @@
       </div>
       <% else %>
         <div id="navbarExampleTransparentExample" class="navbar-menu">
+          <div class="navbar-item">
+            <%= link_to "ムービー一覧", movies_path, class: "navbar-item button is-warning is-light" %>
+          </div>
           <div class="navbar-end">
             <div class="navbar-item">
               <div class="field is-grouped">
-                <p class="control">
-                  <%= link_to "ムービー一覧", movies_path, class: "navbar-item button is-warning is-light" %>
-                </p>
                 <p class="control">
                   <%= link_to "ムービーグラマー一覧", users_path, class: " button is-warning is-light" %>
                 </p>

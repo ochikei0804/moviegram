@@ -2,7 +2,7 @@
   <div class="hero-body">
     <div class="container">
       <h1 class="title">
-        マイページ
+        <strong><%= @user.username %></strong> のページ
       </h1>
     </div>
   </div>
@@ -72,7 +72,7 @@
               <div class="card-image">
                 <figure class="image is-4by3">
                   <%= link_to movie_path(movie) do %>
-                    <%= attachment_image_tag movie, :image, fallback: "no-image.png" %> %>
+                    <%= attachment_image_tag movie, :image, fallback: "no-image.png" %>
                   <% end %>
                 </figure>
               </div>
