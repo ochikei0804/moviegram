@@ -14,8 +14,8 @@ You can recommend your favorite movies or videos to others.
 [how to use](https://gyazo.com/806a79020fbf7b941473f110190fe9a2)
 
 # About user for test (Please login and try) 
-Username: test
-Password: testtest
+* Username: test
+* Password: testtest
 
 # List of application functions
 New user registration function
