@@ -11,7 +11,7 @@
  
 You can recommend your favorite movies or videos to others.
 
-![](https://gyazo.com/806a79020fbf7b941473f110190fe9a2)
+[how to use](https://gyazo.com/806a79020fbf7b941473f110190fe9a2)
 
 # About user for test (Please login and try) 
 Username: test
