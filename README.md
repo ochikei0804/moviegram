@@ -18,15 +18,15 @@ You can recommend your favorite movies or videos to others.
 * Password: testtest
 
 # List of application functions
-New user registration function
-User login function
-Article list display function
-Article detail display function
-Article posting function
-Comment function
-User follow function
-Post favorite function
-Image upload function
+* New user registration function(新規ユーザー登録機能)
+* User login function(ログイン機能)
+* Article list display function(記事一覧表示機能)
+* Article detail display function(記事詳細表示機能)
+* Article posting function(記事投稿機能)
+* Comment function(コメント機能)
+* User follow function(ユーザフォロー機能)
+* Post favorite function(記事お気に入り機能)
+* Image upload function(画像アップロード機能)
 
 # List of technologies used in the application
 * infrastructure: AWS
