@@ -17,5 +17,6 @@ module Moviegram
     # the framework and any gems in your application.
     # タイムゾーンを日本時間に設定
     config.time_zone = 'Tokyo'
+    Rails.application.config.assets.unknown_asset_fallback = true
   end
 end

@@ -1,35 +1,48 @@
 # README
 
-# Ruby on Rails version
-* ruby 2.5.3p105 (2018-10-18 revision 65156) [x86_64-linux]
+# バージョン
+* Ruby 2.5.3
 * Rails 5.2.4.3
 
-# Application overview
-"moviegram" is a site where you can recommend your favorite movies created Ruby on Rails.
+# アプリケーション概要
+"moviegram"は、Ruby on Railsで作成したお気に入りの映画をお勧めできるサイトです。
 
 # DEMO
- 
-You can recommend your favorite movies or videos to others.
+
+お気に入りの映画や動画を他の人におすすめすることができます。
 
 [how to use](https://gyazo.com/806a79020fbf7b941473f110190fe9a2)
 
-# About user for test (Please login and try) 
+上記は、投稿を新規作成の流れを録画したDEMOです。
+
+# テストユーザーについて（是非ログインしてお試しください）
 * Username: test
 * Password: testtest
 
-# List of application functions
-* New user registration function(新規ユーザー登録機能)
-* User login function(ログイン機能)
-* Article list display function(記事一覧表示機能)
-* Article detail display function(記事詳細表示機能)
-* Article posting function(記事投稿機能)
-* Comment function(コメント機能)
-* User follow function(ユーザフォロー機能)
-* Post favorite function(記事お気に入り機能)
-* Image upload function(画像アップロード機能)
+# 実装機能
+## 記事関連
+* 記事一覧表示機能
+* 記事編集機能
+* 記事詳細表示機能
+* 記事投稿機能
+* 記事削除機能
+* 記事お気に入り機能
 
-# List of technologies used in the application
-* infrastructure: AWS
-* database： MySQL
-* design: Bulma
-* deploy: Heroku
+## ユーザー関連
+* 新規ユーザー登録機能
+* 編集機能（ユーザー名、アドレス、プロフィール内容、アイコン）
+* ログイン・アウト機能
+* ユーザフォロー機能
+
+## コメント関連
+* 投稿機能
+* 削除機能
+
+## その他
+* 画像アップロード機能
+
+# アプリケーションで使用している技術一覧
+* インフラ: AWS
+* データベース： MySQL
+* デザイン: Bulma
+* デプロイ: Heroku

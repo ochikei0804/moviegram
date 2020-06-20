@@ -46,15 +46,21 @@
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="field is-grouped">
-            <p class="control">
+            <div class="navbar-item">
               <%= link_to "ムービーグラマー一覧", users_path, class: " button is-warning is-light" %>
-            </p>
-            <p class="control">
-              <%= link_to current_user.username, user_path(current_user), class: " button is-warning is-light" %>
-            </p>
-            <p class="control">
+            </div>
+            <div class="navbar-item">
+              <%= link_to current_user do %>
+                <span class="button is-warning is-light">
+                  <%= attachment_image_tag current_user, :profile_image, fallback: "no-image.png", class: "profile_image" %>
+                  &nbsp;
+                  <%= current_user.username %>
+                </span>
+              <% end %>
+            </div>
+            <div class="navbar-item">
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "button is-warning is-light" %>
-            </p>
+            </div>
           </div>
         </div>
       </div>
