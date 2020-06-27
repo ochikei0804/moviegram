@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Moviegram</title>
+    <title>moviegram</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     
@@ -23,7 +23,7 @@
       </div>
     <% end %>
     
-    <nav class="navbar is-warning">
+    <nav class="navbar is-warning" role="navigation is-transparent" aria-label="dropdown navigation">
       <div class="navbar-brand">
         <%= link_to root_path, class: "navbar-item" do %>
           <h1 class="title is-4" style="font-family: cursive;">moviegram</h1>
@@ -37,51 +37,46 @@
 
       <% if user_signed_in? %>
       <div id="navbarExampleTransparentExample" class="navbar-menu">
-        <div class="navbar-item">
-          <%= link_to "ムービー一覧", movies_path, class: "navbar-item button is-warning is-light" %>
+        <div class="navbar-start">
+          <%= link_to "movies", movies_path, class: "navbar-item" %>
+          <%= link_to "moviegramers", users_path, class: "navbar-item" %>
+          
+          <div class="navbar-item">
+            <%= link_to "New Post", new_movie_path, class: "button is-primary" %>
+          </div>
         </div>
-        <div class="navbar-item">
-          <%= link_to "新規投稿", new_movie_path, class: "navbar-item button is-warning is-light" %>
-        </div>
-      <div class="navbar-end">
-        <div class="navbar-item">
-          <div class="field is-grouped">
-            <div class="navbar-item">
-              <%= link_to "ムービーグラマー一覧", users_path, class: " button is-warning is-light" %>
-            </div>
-            <div class="navbar-item">
-              <%= link_to current_user do %>
-                <span class="button is-warning is-light">
-                  <%= attachment_image_tag current_user, :profile_image, fallback: "no-image.png", class: "profile_image" %>
-                  &nbsp;
-                  <%= current_user.username %>
-                </span>
-              <% end %>
-            </div>
-            <div class="navbar-item">
-            <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "button is-warning is-light" %>
-            </div>
+        
+        
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            <figure class="image is-24x24 m-r-5">
+              <%= attachment_image_tag current_user, :profile_image, fallback: "no-image.png", class: "is-rounded" %>
+            </figure>
+            &nbsp;
+            <%= current_user.username %>
+          </a>
+          
+          <div class="navbar-dropdown">
+              <%= link_to "Profile", user_path(current_user), class: "navbar-item" %>
+            <hr class="navbar-divider">
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "navbar-item" %>
           </div>
         </div>
       </div>
       <% else %>
         <div id="navbarExampleTransparentExample" class="navbar-menu">
-          <div class="navbar-item">
-            <%= link_to "ムービー一覧", movies_path, class: "navbar-item button is-warning is-light" %>
+          <div class="navbar-start">
+            <%= link_to "movies", movies_path, class: "navbar-item" %>
+            <%= link_to "moviegramers", users_path, class: "navbar-item" %>
           </div>
+          
           <div class="navbar-end">
             <div class="navbar-item">
-              <div class="field is-grouped">
-                <p class="control">
-                  <%= link_to "ムービーグラマー一覧", users_path, class: " button is-warning is-light" %>
-                </p>
-                <p class="control">
-                  <%= link_to "ログイン", new_user_session_path, class: "button is-warning is-light" %>
-                </p>
-                <p class="control">
-                  <%= link_to "新規登録", new_user_registration_path, class: "button is-warning is-light" %>
-                </p>
-              </div>
+              <%= link_to "Login", new_user_session_path, class: "button is-warning is-light" %>
+            </div>
+            
+            <div class="navbar-item">
+              <%= link_to "Sign Up", new_user_registration_path, class: "button is-primary" %>
             </div>
           </div>
         </div>

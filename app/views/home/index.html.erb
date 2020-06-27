@@ -9,19 +9,34 @@
       <div class="columns is-centered">
         <div class="column is-5">
           <br>
-          <%= link_to "ログイン", new_user_session_path, class: "button is-warning is-fullwidth" %>
+          <%= link_to "Login", new_user_session_path, class: "button is-warning is-fullwidth" %>
           <br>
-          <%= link_to "新規登録", new_user_registration_path, class: "button is-warning is-fullwidth" %>
+          <%= link_to "Sign Up", new_user_registration_path, class: "button is-primary is-fullwidth" %>
         </div>
       </div>
     </div>
   </article>
   <br>
-  <div class="columns is-centered">
-    <div class="column">
-      <figure>
-        <div class="main-image"></div>
-      </figure>
-    </div>
+
+<div class="tile is-ancestor">
+  <div class="tile is-parent">
+    <article class="tile is-child box">
+      <p class="title">下記はテストアカウントです。是非お試しください！</p>
+    </article>
   </div>
+</div>
+<div class="tile is-ancestor">
+  <div class="tile is-parent">
+    <article class="tile is-child box">
+      <p class="title">testアカウントEmail</p>
+      <p class="subtitle">test@gmail.com</p>
+    </article>
+  </div>
+  <div class="tile is-parent">
+    <article class="tile is-child box">
+      <p class="title">testアカウントPassword</p>
+      <p class="subtitle">testtest</p>
+    </article>
+  </div>
+</div>
 </section>

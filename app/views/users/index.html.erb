@@ -2,7 +2,7 @@
   <div class="hero-body">
     <div class="container">
       <h1 class="title">
-        ムービーグラマー一覧
+        moviegramers
       </h1>
     </div>
   </div>
@@ -30,6 +30,10 @@
               </div>
             </div>
             <div class="content">
+              フォロー数：<%= user.followings.count %> 人
+              <br />
+              フォロワー数：<%= user.followers.count %> 人
+              <br />
               投稿数：<%= user.movies.count %> 件
               <% if user_signed_in? %>
                 <% unless current_user.id == user.id %>
