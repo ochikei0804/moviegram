@@ -11,7 +11,7 @@
 
 お気に入りの映画や動画を他の人におすすめすることができます。
 
-[how to use](https://gyazo.com/806a79020fbf7b941473f110190fe9a2)
+[how to use](https://gyazo.com/cd475c4454b65ccb34bb979c8fe3a05d)
 
 上記は、投稿を新規作成の流れを録画したDEMOです。
 
