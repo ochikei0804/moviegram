@@ -2,7 +2,7 @@
   <div class="hero-body">
     <div class="container">
       <h1 class="title">
-        ムービー詳細
+        Movie details
       </h1>
     </div>
   </div>
@@ -37,7 +37,7 @@
             <div class="content">
               <table class="table is-narrow">
                 <tr>
-                  <th>ムービー</th>
+                  <th>Movie</th>
                 </tr>
                 <tr>
                   <td><%= simple_format @movie.body %></td>
@@ -77,34 +77,52 @@
   <div class="box">
     <p class="title is-4">コメント一覧</p>
       <% @comments.each do |comment| %>
-  <div>
-  <% unless comment.user.blank? %>
-    <a href="<%= user_path(comment.user_id) %>">
-      <div class="image is-64x64" style="margin-right: auto;">
-        <%= attachment_image_tag comment.user, :profile_image, fallback: "no-image.png", class: "profile_image is-rounded mr-3 mb-3" %>
-      </div></a>
-  
-    <strong><%= comment.user.username unless comment.user.blank? %></strong>
-    <p><span>コメント内容: </span><%= comment.content %></p>
-    <%# コメント投稿者のみ削除可 %>
-      <% if current_user == comment.user %>
-        <p><%=link_to "削除", movie_comment_path(@movie, comment), method: :delete, data: { confirm: "本当に削除しますか？" },  class: "button is-danger"%></p>
+        <div>
+          <article class="media">
+            <figure class="media-left">
+              <p class="image is-64x64">
+              <% unless comment.user.blank? %>
+                <a href="<%= user_path(comment.user_id) %>">
+                  <%= attachment_image_tag comment.user, :profile_image, fallback: "no-image.png", class: "profile_image is-rounded mr-3 mb-3" %>
+                </a>
+              </p>
+            </figure>
+            <div class="media-content">
+              <div class="content">
+                <p>
+                  <strong><%= comment.user.username unless comment.user.blank? %></strong>
+                  <small><time datetime="<%= comment.created_at %>">
+                    <%= time_ago_in_words(comment.created_at) %> ago
+                  </time></small>
+                  <br>
+                  <%= comment.content %>
+                  <br>
+                  <%# コメント投稿者のみ削除可 %>
+                  <% if current_user == comment.user %>
+                    <%=link_to movie_comment_path(@movie, comment), method: :delete, data: { confirm: "本当に削除しますか？" },  class: "button is-danger" do %>
+                      <i class="fas fa-trash"></i>
+                      &nbsp;削除
+                    <% end %>
+                  <% else %>
+                  <% end %>
+                </p>
+                <br>
+              </div>
+            </div>
+          <% end %>
+          </article>
+        </div>
       <% end %>
-    <br />
-    <br />
-  <% end %>
-  </div>
-  
-  <% end %>
 
-  <% if user_signed_in? %>
-    <%= form_with(model: [@movie, @comment], local: true) do |f| %>
-      <%= f.text_area :content, class: "textarea", rows: 5 %>
-      <br />
-      <%= button_tag type: "submit", class: "button is-success" do %>
-        <i class="far fa-comments"></i> コメントする
+    <% if user_signed_in? %>
+      <%= form_with(model: [@movie, @comment], local: true) do |f| %>
+        <%= f.text_area :content, class: "textarea", placeholder: "Add a comment...", rows: 5 %>
+        <br />
+        <%= button_tag type: "submit", class: "button is-success" do %>
+          <i class="far fa-comments"></i> &nbsp;Post comment
+        <% end %>
       <% end %>
     <% end %>
-  <% end %>
+    </div>
   </div>
 </div>

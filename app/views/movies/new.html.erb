@@ -2,7 +2,7 @@
   <div class="hero-body">
     <div class="container">
       <h1 class="title">
-        新規ムービーレコメンド作成
+        Create new movie recommendation
       </h1>
     </div>
   </div>
@@ -25,21 +25,21 @@
       <div class="column is-6">
       <%= form_for @movie do |f| %>
       <div class="field">
-        <%= f.label :title, "ムービータイトル", class: "label" %>
+        <%= f.label :title, "Movie Title", class: "label" %>
         <%= f.text_field :title, class: "input" %>
       </div>
       
       <div class="field"> 
-        <%= f.label :body, "レコメンド内容", class: "label" %>
+        <%= f.label :body, "Recommendation content", class: "label" %>
         <%= f.text_area :body, class: "textarea" %>
       </div>
       
       <div class="field"> 
-        <%= f.label :image, "サムネイル", class: "label" %>
+        <%= f.label :image, "Thumbnail", class: "label" %>
         <%= f.attachment_field :image, class: "input" %>
       </div>
       
-        <%= f.submit '投稿', class: "button is-success" %>
+        <%= f.submit 'Post', class: "button is-success" %>
       <% end %>
       </div>
     </div>
